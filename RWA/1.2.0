@@ -1,1 +1,8 @@
-
+{
+  "showUpdatePopup": false,
+  "popupTitle": "Update Available",
+  "popupMessage": "New version available! Please download the latest app from our Telegram channel.",
+  "telegramUrl": "https://t.me/LB_Hub_Official",
+  "buttonText": "Download App",
+  "dismissible": true
+}
