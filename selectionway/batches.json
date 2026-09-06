@@ -1,5 +1,40 @@
 [
     {
+        "id": "6a9c1a854d63c7a67104bba6",
+        "banner": "https://selectionwayserver-proxy2.hranker.com:8443/courses/banners/1788617953002-all_teachers.jpg",
+        "title": "Selection Batch 12.0"
+    },
+    {
+        "id": "6a9c1a754d63c7a6710471af",
+        "banner": "https://selectionwayserver-proxy2.hranker.com:8443/courses/banners/1788617984752-gagan_sir.jpg",
+        "title": "Maths Special 12.0"
+    },
+    {
+        "id": "6a9c1a594d63c7a67104719d",
+        "banner": "https://selectionwayserver-proxy2.hranker.com:8443/courses/banners/1788618210557-balram_sir.jpg",
+        "title": "Reasoning Special 12.0"
+    },
+    {
+        "id": "6a9c1a484d63c7a671047177",
+        "banner": "https://selectionwayserver-proxy2.hranker.com:8443/courses/banners/1788618330799-vikramjeet_sir.jpg",
+        "title": "Reasoning Foundation 2.0"
+    },
+    {
+        "id": "6a9c19224d63c7a671047094",
+        "banner": "https://selectionwayserver-proxy2.hranker.com:8443/courses/banners/1788618368927-varun_sir.jpg",
+        "title": "GS Special 12.0"
+    },
+    {
+        "id": "6a9c19044d63c7a671047074",
+        "banner": "https://selectionwayserver-proxy2.hranker.com:8443/courses/banners/1788618397778-shubham_sir.jpg",
+        "title": "GS Foundation 2.0"
+    },
+    {
+        "id": "6a9c1a6b4d63c7a6710471a3",
+        "banner": "https://selectionwayserver-proxy2.hranker.com:8443/courses/banners/1788618172251-amans_sir.jpg",
+        "title": "English Special 12.0"
+    },
+    {
         "id": "6a8d695d6a1aff889c4dccf2",
         "banner": "https://selectionwayserver-proxy2.hranker.com:8443/courses/banners/1787673899154-new.jpg",
         "title": "Selection Batch  Vod 5.0"
