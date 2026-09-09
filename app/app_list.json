@@ -1,0 +1,94 @@
+{
+  "status": 200,
+  "message": "App List fetch Successfully...!",
+  "data": [
+    {
+      "_id": "5eb393ee95fab7468a79d182",
+      "title": "Next Toppers",
+      "subtitle": "NT MOD APK v1.0.0",
+      "version": "1.0.0",
+      "size": "21.27 MB",
+      "category": "Educational",
+      "icon": "https://i.postimg.cc/W3v5fRYr/square-icon.png",
+      "url": "https://core.asmultiverse.app/api/v1/terabox/download/apk?link=AS_MultiVerse_Infinity_v2.02.7_TheMadXABhi.apk",
+      "developer": "Local Boy",
+      "downloads": "1000+",
+      "buttonText": "Let's Study",
+      "screenshot": {
+        "screenshot1": "https://i.ibb.co/LdYhgXyr/1000463650.jpg",
+        "screenshot2": "https://i.ibb.co/nqsgvc0N/1000463652.jpg",
+        "screenshot3": "https://i.ibb.co/5X61NDB1/1000463651.jpg"
+      },
+      "isNew": false,
+      "isPopular": true,
+      "isFeatured": true,
+      "order": 1
+    },
+    {
+      "_id": "69d6a2a167a3a4263ae3d0d0",
+      "title": "Mission JEET",
+      "subtitle": "MJ MOD APK v1.0.0",
+      "version": "1.0.0",
+      "size": "22.78 MB",
+      "category": "Educational",
+      "icon": "https://i.postimg.cc/26F5zTH7/4661462-1-Mission-JEET-Logo.png",
+      "url": "https://core.asmultiverse.app/api/v1/terabox/download/apk?link=AS_MultiVerse_Infinity_v2.02.7_TheMadXABhi.apk",
+      "developer": "Local Boy",
+      "downloads": "1000+",
+      "buttonText": "Let's Study",
+      "screenshot": {
+        "screenshot1": "https://i.ibb.co/LdYhgXyr/1000463650.jpg",
+        "screenshot2": "https://i.ibb.co/nqsgvc0N/1000463652.jpg",
+        "screenshot3": "https://i.ibb.co/5X61NDB1/1000463651.jpg"
+      },
+      "isNew": false,
+      "isPopular": true,
+      "isFeatured": true,
+      "order": 2
+    },
+    {
+      "_id": "5eb393ee95fab7468a356fx5",
+      "title": "Selection Way",
+      "subtitle": "SW MOD APK v1.0.0",
+      "version": "1.0.0",
+      "size": "22.78 MB",
+      "category": "Educational",
+      "icon": "https://i.ibb.co/60cF3WS2/x.jpg",
+      "url": "https://core.asmultiverse.app/api/v1/terabox/download/apk?link=AS_MultiVerse_Infinity_v2.02.7_TheMadXABhi.apk",
+      "developer": "Local Boy",
+      "downloads": "1000+",
+      "buttonText": "Let's Study",
+      "screenshot": {
+        "screenshot1": "https://i.ibb.co/LdYhgXyr/1000463650.jpg",
+        "screenshot2": "https://i.ibb.co/nqsgvc0N/1000463652.jpg",
+        "screenshot3": "https://i.ibb.co/5X61NDB1/1000463651.jpg"
+      },
+      "isNew": false,
+      "isPopular": true,
+      "isFeatured": true,
+      "order": 3
+    },
+    {
+      "_id": "5eb393ee95fab7468a795767",
+      "title": "Rojgar With Ankit [RWA]",
+      "subtitle": "RWA MOD APK - v1.2.0",
+      "version": "1.2.0",
+      "size": "22.9 MB",
+      "category": "Educational",
+      "icon": "https://i.postimg.cc/cLytYbpL/20231229-165646.jpg",
+      "url": "https://core.asmultiverse.app/api/v1/terabox/download/apk?link=RWA_v12.21.06_TheMadXABhi.apk",
+      "developer": "Local Boy",
+      "downloads": "1000+",
+      "buttonText": "Download Now",
+      "screenshot": {
+        "screenshot1": "https://i.ibb.co/LdYhgXyr/1000463650.jpg",
+        "screenshot2": "https://i.ibb.co/nqsgvc0N/1000463652.jpg",
+        "screenshot3": "https://i.ibb.co/5X61NDB1/1000463651.jpg"
+      },
+      "isNew": false,
+      "isPopular": true,
+      "isFeatured": false,
+      "order": 4
+    }
+  ]
+}
