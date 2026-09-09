@@ -14,11 +14,6 @@
       "developer": "Local Boy",
       "downloads": "1000+",
       "buttonText": "Let's Study",
-      "screenshot": {
-        "screenshot1": "https://i.ibb.co/LdYhgXyr/1000463650.jpg",
-        "screenshot2": "https://i.ibb.co/nqsgvc0N/1000463652.jpg",
-        "screenshot3": "https://i.ibb.co/5X61NDB1/1000463651.jpg"
-      },
       "isNew": false,
       "isPopular": true,
       "isFeatured": true,
@@ -36,11 +31,6 @@
       "developer": "Local Boy",
       "downloads": "1000+",
       "buttonText": "Let's Study",
-      "screenshot": {
-        "screenshot1": "https://i.ibb.co/LdYhgXyr/1000463650.jpg",
-        "screenshot2": "https://i.ibb.co/nqsgvc0N/1000463652.jpg",
-        "screenshot3": "https://i.ibb.co/5X61NDB1/1000463651.jpg"
-      },
       "isNew": false,
       "isPopular": true,
       "isFeatured": true,
@@ -58,11 +48,6 @@
       "developer": "Local Boy",
       "downloads": "1000+",
       "buttonText": "Let's Study",
-      "screenshot": {
-        "screenshot1": "https://i.ibb.co/LdYhgXyr/1000463650.jpg",
-        "screenshot2": "https://i.ibb.co/nqsgvc0N/1000463652.jpg",
-        "screenshot3": "https://i.ibb.co/5X61NDB1/1000463651.jpg"
-      },
       "isNew": false,
       "isPopular": true,
       "isFeatured": true,
@@ -80,15 +65,27 @@
       "developer": "Local Boy",
       "downloads": "1000+",
       "buttonText": "Download Now",
-      "screenshot": {
-        "screenshot1": "https://i.ibb.co/LdYhgXyr/1000463650.jpg",
-        "screenshot2": "https://i.ibb.co/nqsgvc0N/1000463652.jpg",
-        "screenshot3": "https://i.ibb.co/5X61NDB1/1000463651.jpg"
-      },
       "isNew": false,
       "isPopular": true,
       "isFeatured": false,
       "order": 4
+    },
+    {
+      "_id": "5eb393ee95fab7468a356fx5",
+      "title": "Physics Wallah",
+      "subtitle": "PW MOD APK v1.0.0",
+      "version": "1.0.0",
+      "size": "Coming soon",
+      "category": "Educational",
+      "icon": "https://i.ibb.co/vx4npQd4/unnamed.png",
+      "url": "",
+      "developer": "Local Boy",
+      "downloads": "Coming soon",
+      "buttonText": "Coming Soon",
+      "isNew": false,
+      "isPopular": true,
+      "isFeatured": true,
+      "order": 3
     }
   ]
 }
