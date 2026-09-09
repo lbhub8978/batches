@@ -1,0 +1,24 @@
+{
+  "status": 200,
+  "message": "App data fetch Successfully...!",
+  "data": {
+    "appName": "LBHUB",
+    "web": "https://lbhub.app",
+    "tg": "https://t.me/LB_Hub_Official",
+    "wp": "https://whatsapp.com/channel/0029VbDu5gKDZ4LToX4vSF0a",
+    "donate": "https://t.me/lbhub_donate",
+    "announcementTitle": "🚩 Note: This App is 100% FREE!",
+    "announcementDescription": "If someone charged you for this app, ask for a refund immediately.\n\n🚫 Due to frequent copyright issues on Telegram, all official updates are now shared on WhatsApp.\n👉 The Telegram link is available in our official WhatsApp channel. Only join that one - all others are unofficial.\n\nStay updated, stay safe! 🔐🚩",
+    "announcementImage": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=800&q=80",
+    "announcementButton": "Join Now",
+    "announcementLink": "https://whatsapp.com/channel/0029VbDu5gKDZ4LToX4vSF0a",
+    "announcementVisible": true,
+    "tag": "@LB_Hub_Official",
+    "announcementAppInfo": "People with a good heart are always beautiful. True beauty isn't about how you look, it's about the kindness, love, and goodness you carry within.",
+    "mainAppData": {
+      "mAVersion": "v2.02.7",
+      "updateMessage": "🚀 LBHUB v2.02.7 Update is Live!\n\n✅ Fast downloads and stability improvements\n✅ All issues resolved\n\nStay tuned for more updates! 🔥",
+      "updateLink": "https://whatsapp.com/channel/0029VbDu5gKDZ4LToX4vSF0a"
+    }
+  }
+}
