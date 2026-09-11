@@ -15,6 +15,7 @@
     "announcementVisible": true,
     "tag": "@LB_Hub_Official",
     "keyvideo": "https://t.me/LB_Hub_Official/2995",
+    "backend": "https://lbhubcf.lb-hub.workers.dev",
     "mainAppData": {
       "mAVersion": "v1.0.0",
       "updateMessage": "🚀 LBHUB v1.0.0 Update is Live!\n\n✅ All issues resolved\nStay tuned for more updates! 🔥",
