@@ -3,21 +3,21 @@
   "message": "App data fetch Successfully...!",
   "data": {
     "appName": "LBHUB",
-    "web": "https://lbhub.app",
+    "web": "https://lbhub.in",
     "tg": "https://t.me/LB_Hub_Official",
     "wp": "https://whatsapp.com/channel/0029VbDu5gKDZ4LToX4vSF0a",
     "donate": "https://t.me/lbhub_donate",
-    "announcementTitle": "🚩 Note: This App is 100% FREE!",
-    "announcementDescription": "If someone charged you for this app, ask for a refund immediately.\n\n🚫 Due to frequent copyright issues on Telegram, all official updates are now shared on WhatsApp.\n👉 The Telegram link is available in our official WhatsApp channel. Only join that one - all others are unofficial.\n\nStay updated, stay safe! 🔐🚩",
-    "announcementImage": "https://i.ibb.co/Kc9PCN9B/IMG-20260910-073046-433.jpg",
-    "announcementButton": "Join Now",
-    "announcementLink": "https://whatsapp.com/channel/0029VbDu5gKDZ4LToX4vSF0a",
+    "announcementTitle": "🚨 EMERGENCY DONATION — LB HUB ❤️",
+    "announcementDescription": "Bhai log, LB HUB ko abhi urgent financial support ki zarurat hai. 🙏❤️\n\nAgar possible ho to apni capacity ke according chhoti si contribution karke LB HUB ko support karein.\n\nAapka support:\n📚 Study Resources\n⚡ Better Servers\n🛠️ New Features\n\n❤️ THANK YOU FOR SUPPORTING LB HUB",
+    "announcementImage": "https://i.ibb.co/5xBcjNBf/file-00000000a084820b85499ea5514ce502.png",
+    "announcementButton": "Donate Now",
+    "announcementLink": "https://t.me/lbhub_donate/9",
     "announcementVisible": true,
     "tag": "@LB_Hub_Official",
     "keyvideo": "https://t.me/LB_Hub_Official/2995",
     "mainAppData": {
-      "mAVersion": "v1.0.0",
-      "updateMessage": "🚀 LBHUB v1.0.0 Update is Live!\n\n✅ All issues resolved\nStay tuned for more updates! 🔥",
+      "mAVersion": "v1.1.0",
+      "updateMessage": "🚀 LBHUB v1.1.0 Update is Live!\n\n✅ All issues resolved\nStay tuned for more updates! 🔥",
       "updateLink": "https://whatsapp.com/channel/0029VbDu5gKDZ4LToX4vSF0a"
     }
   }
