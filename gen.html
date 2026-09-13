@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LB HUB - Key Generation</title>
+<style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        min-height: 100vh;
+        background: #070e1a;
+        background-image:
+            radial-gradient(circle at 25% 25%, rgba(34,211,238,.15), transparent 45%),
+            radial-gradient(circle at 80% 80%, rgba(168,85,247,.15), transparent 45%);
+        display: flex; align-items: center; justify-content: center; padding: 24px;
+        color: #fff;
+    }
+    .card {
+        width: 100%; max-width: 440px;
+        background: rgba(255,255,255,.06);
+        border: 1px solid rgba(255,255,255,.12);
+        border-radius: 24px;
+        padding: 32px;
+        text-align: center;
+        backdrop-filter: blur(14px);
+        box-shadow: 0 20px 60px rgba(0,0,0,.4);
+    }
+    .icon {
+        width: 76px; height: 76px; margin: 0 auto 20px;
+        border-radius: 24px;
+        background: linear-gradient(135deg, #22d3ee, #a855f7);
+        display: flex; align-items: center; justify-content: center;
+        font-size: 32px;
+    }
+    h2 { font-size: 22px; font-weight: 800; margin-bottom: 8px; }
+    p.sub { font-size: 13px; color: rgba(255,255,255,.6); margin-bottom: 22px; line-height: 1.5; }
+    .status-line { font-size: 13px; font-weight: 600; color: #22d3ee; margin-bottom: 14px; min-height: 20px; }
+    .btn {
+        width: 100%; padding: 14px; border: none; border-radius: 14px;
+        background: linear-gradient(90deg, #22d3ee, #a855f7);
+        color: #fff; font-weight: 700; font-size: 15px; cursor: pointer;
+        display: flex; align-items: center; justify-content: center; gap: 8px;
+    }
+    .btn:disabled { opacity: .55; cursor: not-allowed; }
+    .spinner {
+        width: 16px; height: 16px; border: 2px solid rgba(255,255,255,.4);
+        border-top-color: #fff; border-radius: 50%;
+        animation: spin .8s linear infinite;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    .err { color: #f87171; font-size: 13px; font-weight: 600; margin-top: 14px; min-height: 18px; }
+    .link-block { margin-top: 20px; padding: 16px; border-radius: 16px; background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.1); text-align: left; }
+    .link-block .ttl { font-size: 11px; font-weight: 700; color: rgba(255,255,255,.5); text-transform: uppercase; letter-spacing: .5px; }
+    a.gen { font-size: 13px; font-weight: 700; color: #22d3ee; word-break: break-all; text-decoration: none; }
+    a.gen:hover { text-decoration: underline; }
+    ul.steps { list-style: none; margin-top: 10px; display: flex; flex-direction: column; gap: 6px; }
+    ul.steps li { font-size: 12px; display: flex; gap: 8px; align-items: flex-start; }
+    .done { color: #34d399; }
+    .active { color: #22d3ee; }
+    .wait { color: rgba(255,255,255,.3); }
+    .popup-warn { margin-top: 10px; font-size: 11px; color: #fb923c; font-weight: 600; }
+    .alt { margin-top: 24px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,.1); }
+    .alt label { font-size: 11px; font-weight: 700; color: rgba(255,255,255,.5); text-transform: uppercase; display: block; margin-bottom: 10px; }
+    .key-row { display: flex; flex-direction: column; gap: 10px; }
+    .alt input {
+        width: 100%; padding: 13px; border-radius: 12px; border: 1px solid rgba(255,255,255,.15);
+        background: rgba(255,255,255,.07); color: #fff; font-size: 14px; outline: none;
+    }
+    .alt input::placeholder { color: rgba(255,255,255,.4); }
+    .alt input:focus { border-color: #22d3ee; }
+    .verify {
+        width: 100%; padding: 13px; border: none; border-radius: 12px;
+        background: linear-gradient(90deg, #10b981, #14b8a6);
+        color: #fff; font-weight: 700; font-size: 14px; cursor: pointer;
+        display: flex; align-items: center; justify-content: center; gap: 8px;
+    }
+    .verify:disabled { opacity: .55; cursor: not-allowed; }
+    .dev-info { margin-top: 18px; font-size: 11px; color: rgba(255,255,255,.4); word-break: break-all; }
+    .hidden { display: none; }
+</style>
+</head>
+<body>
+<div class="card">
+    <div class="icon">🔑</div>
+    <h2 id="title">Device is Locked</h2>
+    <p class="sub" id="sub">Your device is not activated yet. Generating your activation link...</p>
+
+    <div class="status-line" id="status">Fetching link...</div>
+
+    <button id="genBtn" class="btn">✨ Generate Key</button>
+    <div class="err" id="genError"></div>
+
+    <div id="genBlock" class="link-block hidden">
+        <div class="ttl">Open link to activate:</div>
+        <a id="genLink" class="gen" href="#" target="_blank" rel="noopener noreferrer"></a>
+        <div class="ttl" style="margin-top:14px;">Flow (new tab):</div>
+        <ul id="steps" class="steps"></ul>
+        <div class="popup-warn hidden" id="popupWarn">Tab band ho gaya. Generate Key dobara dabao.</div>
+    </div>
+
+    <div class="alt">
+        <label>Have an API key? Enter it below</label>
+        <input id="apiKey" type="text" placeholder="Enter API key" autocomplete="off">
+        <div style="margin-top:10px;">
+            <button id="verifyBtn" class="verify">✔ Verify</button>
+        </div>
+        <div class="err" id="verifyError"></div>
+    </div>
+
+    <div class="dev-info" id="devInfo"></div>
+</div>
+
+<script>
+(function () {
+    const STEPS = [
+        'Opening link tab — Please Wait (auto)',
+        'Redirecting to study page (auto)',
+        'Study article loaded (auto)',
+        'Bouncing to entiredust gate (auto)',
+        'Bouncing to entiredust gate 2 (auto)',
+    ];
+    const GENKEY = 'https://lbhubcf.lb-hub.workers.dev/api/genkey';
+    const VERIFY = 'https://lbhubcf.lb-hub.workers.dev/api/key/verify';
+
+    const qs = new URLSearchParams(window.location.search);
+    const deviceId = (qs.get('device') || '').trim();
+    const returnUrl = qs.get('return') || '';
+
+    const genBtn = document.getElementById('genBtn');
+    const statusEl = document.getElementById('status');
+    const genError = document.getElementById('genError');
+    const genBlock = document.getElementById('genBlock');
+    const genLinkEl = document.getElementById('genLink');
+    const stepsEl = document.getElementById('steps');
+    const popupWarn = document.getElementById('popupWarn');
+    const apiKeyInput = document.getElementById('apiKey');
+    const verifyBtn = document.getElementById('verifyBtn');
+    const verifyError = document.getElementById('verifyError');
+    const devInfo = document.getElementById('devInfo');
+
+    let popupRef = null;
+    let step = 0;
+    let timers = [];
+
+    function renderSteps() {
+        stepsEl.innerHTML = '';
+        STEPS.forEach(function (s, i) {
+            const li = document.createElement('li');
+            const done = step > i + 1;
+            const active = step === i + 1;
+            li.className = done ? 'done' : (active ? 'active' : 'wait');
+            li.innerHTML = '<span>' + (done ? '✓' : (active ? '▸' : '·')) + '</span><span>' + s + '</span>';
+            stepsEl.appendChild(li);
+        });
+    }
+
+    function clearTimers() {
+        timers.forEach(function (t) { clearTimeout(t); clearInterval(t); });
+        timers = [];
+    }
+
+    function showStep(n) {
+        step = n;
+        renderSteps();
+    }
+
+    function runChain(vpLink, code) {
+        clearTimers();
+        showStep(0);
+        genBlock.classList.remove('hidden');
+        genLinkEl.href = vpLink;
+        genLinkEl.textContent = vpLink;
+        popupWarn.classList.add('hidden');
+        showStep(1);
+
+        const newTab = window.open(vpLink, '_blank');
+        popupRef = newTab;
+        if (!newTab || newTab.closed || typeof newTab.closed === 'undefined') {
+            const a = document.createElement('a');
+            a.href = vpLink;
+            a.target = '_blank';
+            a.rel = 'noopener noreferrer';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            popupRef = null;
+        }
+
+        timers.push(setTimeout(function () { showStep(2); }, 2500));
+        timers.push(setTimeout(function () { showStep(3); }, 5000));
+        timers.push(setTimeout(function () {
+            showStep(4);
+            if (popupRef && typeof popupRef.closed === 'boolean' && !popupRef.closed && code) {
+                popupRef.location.href = 'https://entiredust.in/studyscholorhiipss/insurcnscesstudiiss/?studissinsurcncecss=' + code;
+            }
+        }, 7500));
+        timers.push(setTimeout(function () {
+            showStep(5);
+            if (popupRef && typeof popupRef.closed === 'boolean' && !popupRef.closed && code) {
+                popupRef.location.href = 'https://entiredust.in/studyscholorhiipss/insurcnscesstudiiss/?studiissuniversstiiss=' + code;
+            }
+        }, 10000));
+        timers.push(setInterval(function () {
+            if (popupRef && typeof popupRef.closed === 'boolean' && popupRef.closed) {
+                popupWarn.classList.remove('hidden');
+            }
+        }, 2000));
+    }
+
+    async function generateKey() {
+        if (!deviceId) {
+            statusEl.textContent = 'Device ID missing from URL.';
+            return;
+        }
+        genBtn.disabled = true;
+        genBtn.innerHTML = '<span class="spinner"></span> Generating Key...';
+        statusEl.textContent = 'Generating link...';
+        genError.textContent = '';
+        clearTimers();
+        showStep(0);
+
+        try {
+            const res = await fetch(GENKEY, { headers: { 'x-device-id': deviceId } });
+            const json = await res.json().catch(function () { return {}; });
+            if (json && typeof json.vp_link === 'string' && json.vp_link) {
+                const m = json.vp_link.match(/\/([A-Za-z0-9_-]{2,32})\/?$/);
+                const code = m ? m[1] : '';
+                statusEl.textContent = 'Link ready. Follow the flow in the new tab.';
+                runChain(json.vp_link, code);
+            } else {
+                statusEl.textContent = 'Link ready. Follow the flow in the new tab.';
+                genError.textContent = 'Failed to generate key. Click Generate Key to try again.';
+            }
+        } catch (e) {
+            statusEl.textContent = 'Link ready. Follow the flow in the new tab.';
+            genError.textContent = 'Failed to generate key. Click Generate Key to try again.';
+        } finally {
+            genBtn.disabled = false;
+            genBtn.innerHTML = '✨ Generate Key';
+        }
+    }
+
+    async function verifyKey() {
+        const key = (apiKeyInput.value || '').trim();
+        if (!deviceId || !key) {
+            verifyError.textContent = 'Please enter your API key.';
+            return;
+        }
+        verifyBtn.disabled = true;
+        verifyBtn.innerHTML = '<span class="spinner"></span> Verifying...';
+        verifyError.textContent = '';
+
+        try {
+            const res = await fetch(VERIFY, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ device_id: deviceId, api_key: key })
+            });
+            const json = await res.json().catch(function () { return {}; });
+            if (json.verified === true || json.verified === 'true') {
+                window.location.href = returnUrl || '/';
+            } else {
+                verifyError.textContent = json.error || 'Invalid key. Please check and try again.';
+            }
+        } catch (e) {
+            verifyError.textContent = 'Failed to verify key. Try again.';
+        } finally {
+            verifyBtn.disabled = false;
+            verifyBtn.innerHTML = '✔ Verify';
+        }
+    }
+
+    genBtn.addEventListener('click', generateKey);
+    verifyBtn.addEventListener('click', verifyKey);
+    apiKeyInput.addEventListener('keydown', function (e) { if (e.key === 'Enter') verifyKey(); });
+
+    if (deviceId) {
+        devInfo.textContent = 'device: ' + deviceId;
+        generateKey();
+    } else {
+        statusEl.textContent = 'No device id in URL.';
+        document.getElementById('sub').textContent = 'This link is invalid. Open it from the app.';
+    }
+
+    renderSteps();
+})();
+</script>
+</body>
+</html>
