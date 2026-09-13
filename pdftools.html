@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>PDF Super Tool</title>
+<script src="https://unpkg.com/pdf-lib@1.17.1/dist/pdf-lib.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sortablejs@1.15.0/Sortable.min.js"></script>
+<style>
+:root{--bg:#0f172a;--card:#1e293b;--muted:#94a3b8;--text:#e2e8f0;--accent:#22c55e}
+body{margin:0;background:var(--bg);color:var(--text);font-family:system-ui,sans-serif;padding:15px}
+.wrap{max-width:900px;margin:auto}.card{background:var(--card);padding:20px;border-radius:20px;box-shadow:0 10px 25px rgba(0,0,0,0.3)}
+h1{font-size:1.4rem;margin:0 0 20px 0;text-align:center}
+.tabs{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:20px}
+button,.btn{background:var(--accent);border:none;color:#fff;padding:12px;border-radius:12px;cursor:pointer;font-weight:600;transition:0.2s}
+button:hover{opacity:0.9}.tab{background:#334155;color:var(--muted)}.tab.active{background:var(--accent);color:#fff}
+.panel{display:none}.panel.active{display:block}
+.controls{display:flex;flex-direction:column;gap:12px;background:#334155;padding:15px;border-radius:15px;margin-bottom:15px}
+.grid-config{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:10px}
+.group{display:flex;flex-direction:column;gap:4px}
+label{font-size:0.75rem;color:var(--muted);text-transform:uppercase;font-weight:bold}
+input,select{padding:10px;border-radius:8px;border:1px solid #475569;background:#1e293b;color:#fff}
+#mergeList, #arrangeList{display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:15px;padding:0;list-style:none;margin-top:10px}
+.item-card{background:#0f172a;padding:8px;border-radius:12px;text-align:center;cursor:grab;border:2px solid #475569;position:relative}
+.item-card:active{cursor:grabbing;border-color:var(--accent)}
+canvas{width:100%;height:auto;border-radius:6px;background:#fff;display:block}
+.info{margin-top:8px;font-size:0.75rem;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+#modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.95);z-index:1000;justify-content:center;align-items:center}
+#modal canvas{max-height:90vh;max-width:95vw}
+.full-btn{width:100%;margin-top:10px;padding:15px;font-size:1rem}
+</style>
+</head>
+<body>
+
+<div id="modal" onclick="this.style.display='none'"><canvas id="modalCanvas"></canvas></div>
+
+<div class="wrap">
+    <div class="card">
+        <h1>🛠️ PDF Super Tool</h1>
+        
+        <div class="tabs">
+            <button class="tab active" onclick="showTab(0)">📦 Merge</button>
+            <button class="tab" onclick="showTab(1)">📄 Layout</button>
+            <button class="tab" onclick="showTab(2)">🔀 Arrange</button>
+        </div>
+
+        <div class="panel active" id="tab0">
+            <div class="controls">
+                <label>Select PDFs to Merge</label>
+                <input type="file" id="mergeInput" accept=".pdf" multiple onchange="loadMergePreviews()">
+            </div>
+            <p style="font-size:0.7rem; color:var(--muted); text-align:center">Drag cards to change order</p>
+            <ul id="mergeList"></ul>
+            <button class="full-btn" onclick="mergePdfs()">Download PDF</button>
+        </div>
+
+        <div class="panel" id="tab1">
+            <div class="controls">
+                <div class="group">
+                    <label>PDF File</label>
+                    <input type="file" id="nupPdf" accept=".pdf">
+                </div>
+                <div class="grid-config">
+                    <div class="group">
+                        <label>Grid</label>
+                        <select id="nupGrid"><option value="2">2-in-1</option><option value="4" selected>4-in-1</option></select>
+                    </div>
+                    <div class="group">
+                        <label>Orientation</label>
+                        <select id="nupOrient"><option value="P">Portrait</option><option value="L">Landscape</option></select>
+                    </div>
+                    <div class="group">
+                        <label>Margin</label>
+                        <input type="number" id="nupMargin" value="0">
+                    </div>
+                </div>
+            </div>
+            <button class="full-btn" onclick="makeNUp()">Download PDF</button>
+        </div>
+
+        <div class="panel" id="tab2">
+            <div class="controls">
+                <label>Select PDF to Reorder</label>
+                <input type="file" id="arrangePdf" accept=".pdf">
+                <button onclick="loadArrangePages()">🚀 Load & Preview</button>
+            </div>
+            <ul id="arrangeList"></ul>
+            <button id="exportBtn" class="full-btn" onclick="exportArranged()" style="display:none">Download PDF</button>
+        </div>
+    </div>
+</div>
+
+<script>
+const { PDFDocument } = PDFLib;
+pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+
+let mergeDataArray = []; 
+let originalPdfBytes = null; 
+let currentFileName = "";
+let mergeSortable, arrangeSortable;
+
+function showTab(i){
+    document.querySelectorAll('.tab').forEach((t,idx)=>t.classList.toggle('active',idx===i));
+    document.querySelectorAll('.panel').forEach((p,idx)=>p.classList.toggle('active',idx===i));
+}
+
+// --- Merge Logic ---
+async function loadMergePreviews() {
+    const files = Array.from(document.getElementById('mergeInput').files);
+    const list = document.getElementById('mergeList');
+    list.innerHTML = '';
+    mergeDataArray = [];
+
+    for (let i = 0; i < files.length; i++) {
+        const buffer = await files[i].arrayBuffer();
+        mergeDataArray.push({ id: i, buffer: buffer, name: files[i].name });
+        
+        const li = document.createElement('li');
+        li.className = 'item-card';
+        li.setAttribute('data-id', i);
+        li.innerHTML = `<canvas id="m-canv-${i}"></canvas><div class="info">${files[i].name}</div>`;
+        list.appendChild(li);
+
+        const pdf = await pdfjsLib.getDocument({data: buffer.slice(0)}).promise;
+        const page = await pdf.getPage(1);
+        const viewport = page.getViewport({scale: 0.2});
+        const canvas = document.getElementById(`m-canv-${i}`);
+        const ctx = canvas.getContext('2d');
+        canvas.height = viewport.height; canvas.width = viewport.width;
+        await page.render({canvasContext: ctx, viewport: viewport}).promise;
+    }
+    if(mergeSortable) mergeSortable.destroy();
+    mergeSortable = new Sortable(list, { animation: 150 });
+}
+
+async function mergePdfs() {
+    const items = document.querySelectorAll('#mergeList .item-card');
+    if(!items.length) return alert("Select Files first!");
+    const out = await PDFDocument.create();
+    for (const item of items) {
+        const id = item.getAttribute('data-id');
+        const data = mergeDataArray.find(d => d.id == id);
+        const src = await PDFDocument.load(data.buffer.slice(0));
+        const pages = await out.copyPages(src, src.getPageIndices());
+        pages.forEach(p => out.addPage(p));
+    }
+    download(await out.save(), 'merged.pdf');
+}
+
+// --- Layout (N-Up) Logic ---
+async function makeNUp() {
+    const fileInput = document.getElementById('nupPdf');
+    const file = fileInput.files[0];
+    if(!file) return alert("Select PDF First!");
+    
+    const grid = parseInt(document.getElementById('nupGrid').value);
+    const margin = parseInt(document.getElementById('nupMargin').value);
+    const orient = document.getElementById('nupOrient').value;
+    
+    const srcDoc = await PDFDocument.load(await file.arrayBuffer());
+    const outDoc = await PDFDocument.create();
+    
+    let W = 595, H = 842; 
+    if(orient === 'L') { [W, H] = [842, 595]; }
+
+    for(let i=0; i < srcDoc.getPageCount(); i += grid) {
+        const page = outDoc.addPage([W, H]);
+        let positions = grid === 4 
+            ? [[0, H/2], [W/2, H/2], [0, 0], [W/2, 0]] 
+            : (orient === 'P' ? [[0, H/2], [0, 0]] : [[0, 0], [W/2, 0]]);
+
+        for(let j=0; j < grid && (i+j) < srcDoc.getPageCount(); j++) {
+            const embedded = await outDoc.embedPage(srcDoc.getPage(i+j));
+            const pos = positions[j];
+            page.drawPage(embedded, {
+                x: pos[0] + margin, y: pos[1] + margin,
+                width: (grid === 4 || (grid === 2 && orient === 'L')) ? (W/2 - margin*2) : (W - margin*2),
+                height: (grid === 4 || (grid === 2 && orient === 'P')) ? (H/2 - margin*2) : (H - margin*2)
+            });
+        }
+    }
+    const newName = file.name.replace(/\.[^/.]+$/, "") + "-layout.pdf";
+    download(await outDoc.save(), newName);
+}
+
+// --- Arrange Logic ---
+async function loadArrangePages(){
+    const fileInput = document.getElementById('arrangePdf');
+    const file = fileInput.files[0];
+    if(!file) return alert("Select PDF First!");
+    
+    currentFileName = file.name.replace(/\.[^/.]+$/, "");
+    originalPdfBytes = await file.arrayBuffer();
+    const pdf = await pdfjsLib.getDocument({data: originalPdfBytes.slice(0)}).promise;
+    const list = document.getElementById('arrangeList');
+    list.innerHTML = '';
+
+    for(let i=1; i<=pdf.numPages; i++){
+        const li = document.createElement('li');
+        li.className = 'item-card';
+        li.setAttribute('data-index', i-1);
+        li.innerHTML = `<canvas id="a-canv-${i-1}" ondblclick="zoom(${i})"></canvas><div class="info">Page ${i}</div>`;
+        list.appendChild(li);
+        
+        const page = await pdf.getPage(i);
+        const viewport = page.getViewport({scale: 0.3});
+        const canvas = document.getElementById(`a-canv-${i-1}`);
+        const ctx = canvas.getContext('2d');
+        canvas.height = viewport.height; canvas.width = viewport.width;
+        await page.render({canvasContext: ctx, viewport: viewport}).promise;
+    }
+    if(arrangeSortable) arrangeSortable.destroy();
+    arrangeSortable = new Sortable(list, { animation: 150 });
+    document.getElementById('exportBtn').style.display = 'block';
+}
+
+async function zoom(num) {
+    const pdf = await pdfjsLib.getDocument({data: originalPdfBytes.slice(0)}).promise;
+    const page = await pdf.getPage(num);
+    const viewport = page.getViewport({scale: 1.2});
+    const canvas = document.getElementById('modalCanvas');
+    const ctx = canvas.getContext('2d');
+    canvas.height = viewport.height; canvas.width = viewport.width;
+    document.getElementById('modal').style.display = 'flex';
+    await page.render({canvasContext: ctx, viewport: viewport}).promise;
+}
+
+async function exportArranged(){
+    const srcDoc = await PDFDocument.load(originalPdfBytes.slice(0));
+    const outDoc = await PDFDocument.create();
+    const items = document.querySelectorAll('#arrangeList .item-card');
+    const order = Array.from(items).map(el => parseInt(el.getAttribute('data-index')));
+    const pages = await outDoc.copyPages(srcDoc, order);
+    pages.forEach(p => outDoc.addPage(p));
+    download(await outDoc.save(), currentFileName + "-arrange.pdf");
+}
+
+function download(bytes, name){
+    const blob = new Blob([bytes], {type:'application/pdf'});
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(blob);
+    a.download = name; a.click();
+}
+</script>
+</body>
+</html>
