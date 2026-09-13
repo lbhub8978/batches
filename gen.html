@@ -410,15 +410,18 @@ a{text-decoration:none;color:inherit}
 
     function verifyKey() {
         var key = (apiKeyInput.value || '').trim();
-        if (!deviceId || !key) { showError(verifyError, 'Enter a valid API key to continue.'); return; }
+        if (!key) { showError(verifyError, 'Enter a valid API key to continue.'); return; }
         setBusy(verifyBtn, true);
         hideError(verifyError);
-        fetch(VERIFY, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ device_id: deviceId, api_key: key }) })
+        var body = { api_key: key };
+        if (deviceId) body.device_id = deviceId;
+        fetch(VERIFY, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body) })
             .then(function(r){ return r.json().catch(function(){return {}}); })
             .then(function(j){
                 if (j.verified === true || j.verified === 'true') {
                     showStatus('Verified. Taking you back to LB HUB\u2026');
-                    setTimeout(function(){ window.location.href = returnUrl || '/'; }, 600);
+                    var dest = j.url || j.redirect_url || j.redirect || j.link || returnUrl || '/';
+                    setTimeout(function(){ window.location.href = dest; }, 600);
                 } else {
                     showError(verifyError, j.error || "That key isn't valid. Check it and try again.");
                 }
@@ -437,7 +440,7 @@ a{text-decoration:none;color:inherit}
     }
 
     function syncVerifyBtn() {
-        verifyBtn.disabled = !deviceId || !((apiKeyInput.value || '').trim());
+        verifyBtn.disabled = !((apiKeyInput.value || '').trim());
     }
 
     genBtn.addEventListener('click', generateKey);
