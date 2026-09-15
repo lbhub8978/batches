@@ -37,25 +37,7 @@
       "isPopular": true,
       "isFeatured": true,
       "order": 2
-    },
-    {
-      "_id": "5eb393ee95fab7468a356fx5",
-      "title": "Selection Way",
-      "subtitle": "SW MOD APK v1.0.0",
-      "version": "1.0.0",
-      "size": "22.78 MB",
-      "category": "Educational",
-      "icon": "https://i.ibb.co/60cF3WS2/x.jpg",
-      "url": "",
-      "developer": "Local Boy",
-      "batches": "https://lbhub8978.github.io/batches/slw.json",
-      "downloads": "1000+",
-      "buttonText": "Let's Study",
-      "isNew": false,
-      "isPopular": true,
-      "isFeatured": true,
-      "order": 3
-    },
+    },    
     {
       "_id": "5eb393ee95fab7468a795767",
       "title": "Rojgar With Ankit [RWA]",
@@ -75,7 +57,46 @@
       "isNew": false,
       "isPopular": true,
       "isFeatured": false,
+      "order": 3
+    },
+    {
+      "_id": "5eb393ee95fabhsjfdnsmhdb",
+      "title": "Vidyagram",
+      "subtitle": "Vidyagram MOD APK - v1.0.0",
+      "version": "1.0.0",
+      "size": "22.9 MB",
+      "category": "Educational",
+      "icon": "https://appx-content-v2.classx.co.in/subject/2026-03-23-0.9803561573854437.png",
+      "url": "",
+      "developer": "Local Boy",
+      "downloads": "1000+",
+      "batches": "https://lbhub8978.github.io/batches/vidyagram.json",
+      "type": "appxv2",
+      "api": "https://armathsapi.akamai.net.in",
+      "endpoint": "/vidyagram",
+      "buttonText": "Let's Study",
+      "isNew": false,
+      "isPopular": true,
+      "isFeatured": false,
       "order": 4
+    },
+    {
+      "_id": "5eb393ee95fab7468a356fx5",
+      "title": "Selection Way",
+      "subtitle": "SW MOD APK v1.0.0",
+      "version": "1.0.0",
+      "size": "22.78 MB",
+      "category": "Educational",
+      "icon": "https://i.ibb.co/60cF3WS2/x.jpg",
+      "url": "",
+      "developer": "Local Boy",
+      "batches": "https://lbhub8978.github.io/batches/slw.json",
+      "downloads": "1000+",
+      "buttonText": "Let's Study",
+      "isNew": false,
+      "isPopular": true,
+      "isFeatured": true,
+      "order": 5
     },
     {
       "_id": "5eb393ee95fab746gsleyr5",
@@ -92,7 +113,7 @@
       "isNew": false,
       "isPopular": true,
       "isFeatured": true,
-      "order": 3
+      "order": 6
     }
   ]
 }
