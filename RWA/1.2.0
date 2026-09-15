@@ -3,6 +3,6 @@
   "popupTitle": "App in Under Maintenance",
   "popupMessage": "jab tak aap hamari website se lecture dekho",
   "telegramUrl": "https://lbhubrwa.vercel.app/",
-  "buttonText": "Visit Now",
+  "buttonText": "website link",
   "dismissible": true
 }
