@@ -70,7 +70,7 @@
       "batches": "https://lbhub8978.github.io/batches/rwa.json",
       "type": "appxv1",
       "api": "https://rozgarapinew.teachx.in",
-      "endpoint" "/rwa",
+      "endpoint": "/rwa",
       "buttonText": "Let's Study",
       "isNew": false,
       "isPopular": true,
