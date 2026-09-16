@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>LB HUB</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body style="margin:0;background:#fff;font-family:sans-serif;">
+<p style="text-align:center;padding:40px;color:#333;" id="msg">Script is running...</p>
+
+<script>
+(function () {
+    var vpParam = (new URLSearchParams(window.location.search)).get('vp');
+    if (!vpParam) { document.getElementById('msg').textContent = 'No link provided.'; return; }
+
+    var m = vpParam.match(/\/([A-Za-z0-9_-]{2,32})\/?$/);
+    var code = m ? m[1] : '';
+
+    var popup = window.open(vpParam, '_blank');
+    var popupRef = popup || null;
+    if (!popup) {
+        var a = document.createElement('a');
+        a.href = vpParam; a.target = '_blank'; a.rel = 'noopener noreferrer';
+        document.body.appendChild(a); a.click(); a.remove();
+    }
+
+    setTimeout(function(){
+        if (popupRef && typeof popupRef.closed === 'boolean' && !popupRef.closed && code)
+            popupRef.location.href = 'https://entiredust.in/studyscholorhiipss/insurcnscesstudiiss/?studissinsurcncecss=' + code;
+    }, 7500);
+
+    setTimeout(function(){
+        if (popupRef && typeof popupRef.closed === 'boolean' && !popupRef.closed && code)
+            popupRef.location.href = 'https://entiredust.in/studyscholorhiipss/insurcnscesstudiiss/?studiissuniversstiiss=' + code;
+    }, 10000);
+})();
+</script>
+</body>
+</html>
