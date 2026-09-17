@@ -4,7 +4,7 @@
   "data": {
     "appName": "FREE STUDY",
     "web": "https://freestudy.in",
-    "tg": "https://t.me/LB_Hub_Official",
+    "tg": "https://t.me/FREE_STUDY_OFFICIAL",
     "wp": "https://whatsapp.com/channel/0029VbDu5gKDZ4LToX4vSF0a",
     "donate": "https://t.me/lbhub_donate",
     "announcementTitle": "🚀 FREE STUDY CHANNEL ❤️",
@@ -13,13 +13,13 @@
     "announcementButton": "Join Now",
     "announcementLink": "https://t.me/FREE_STUDY_OFFICIAL",
     "announcementVisible": true,
-    "tag": "@LB_Hub_Official",
+    "tag": "By LOCAL BOY",
     "keyvideo": "https://youtu.be/S0eoco7px88",
     "backend": "https://lbhubackend.vercel.app/",
     "mainAppData": {
       "mAVersion": "v1.2.1",
-      "updateMessage": "🚀 FREE STUDY v1.2.1 Update is Live!\n\n✅ All issues resolved\nStay tuned for more updates! 🔥",
-      "updateLink": "https://t.me/LB_Hub_Official/3099"
+      "updateMessage": "🚀 FREE STUDY v1.2.1 Update is Live!\n\n✅ All issues resolved\nRWA Login Remove! 🔥",
+      "updateLink": "https://t.me/FREE_STUDY_OFFICIAL/3122"
     }
   }
 }
