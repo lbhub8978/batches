@@ -1,5 +1,15 @@
 [
     {
+        "id": "6aabf366b861d1748aede9fe",
+        "banner": "https://selectionwayserver-proxy2.hranker.com:8443/courses/banners/1789654915813-8.0_banner.png",
+        "title": "Railway Foundation 8.0"
+    },
+    {
+        "id": "6aabf36eb861d1748aedea09",
+        "banner": "https://selectionwayserver-proxy2.hranker.com:8443/courses/banners/1789655313751-Codex_Image_Sep_17,_2026,_07_57_23_PM.jpg",
+        "title": "Science Foundation Batch 3.0"
+    },
+    {
         "id": "6a9c1a854d63c7a67104bba6",
         "banner": "https://selectionwayserver-proxy2.hranker.com:8443/courses/banners/1788617953002-all_teachers.jpg",
         "title": "Selection Batch 12.0"
