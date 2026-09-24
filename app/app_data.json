@@ -15,7 +15,7 @@
     "announcementVisible": true,
     "tag": "By LOCAL BOY",
     "keyvideo": "https://youtu.be/S0eoco7px88",
-    "backend": "https://lbhubbackend-83eeeebc2831.herokuapp.com/",
+    "backend": "https://lbhubbackendapp-9100aefe2537.herokuapp.com",
     "mainAppData": {
       "mAVersion": "v1.2.1",
       "updateMessage": "🚀 FREE STUDY v1.2.1 Update is Live!\n\n✅ All issues resolved\nRWA Login Remove! 🔥",
