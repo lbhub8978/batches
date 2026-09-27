@@ -2,12 +2,14 @@
     {
         "id": "1",
         "name": "Rojgarwithankit",
+        "api": "https://rozgarapinew.teachx.in",
         "logo": "https://i.ibb.co/Pzfycgzg/IMG-20260910-171351-600.jpg",
         "test_series-json": "https://lbhub8978.github.io/batches/testseries/rwatest.json"
     },
     {
         "id": "2",
         "name": "Vidyagram",
+        "api": "https://armathsapi.akamai.net.in",
         "logo": "https://appx-content-v2.classx.co.in/subject/2026-03-23-0.9803561573854437.png",
         "test_series-json": "https://lbhub8978.github.io/batches/testseries/rwatest.json"
     }
