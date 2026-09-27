@@ -99,6 +99,24 @@
             "order": 5
         },
         {
+            "_id": "5eb393ee95fab7468haga",
+            "title": "TEST APP",
+            "subtitle": "TEST APP APK v1.0.0",
+            "version": "1.0.0",
+            "size": "4.13 MB",
+            "category": "Educational",
+            "icon": "https://i.ibb.co/60cF3WS2/x.jpg",
+            "url": "",
+            "developer": "Local Boy",
+            "batches": "https://lbhub8978.github.io/batches/testapp.json",
+            "downloads": "1000+",
+            "buttonText": "Let's Study",
+            "isNew": false,
+            "isPopular": true,
+            "isFeatured": true,
+            "order": 6
+        },
+        {
             "_id": "5eb393ee95fab746gsleyr5",
             "title": "Physics Wallah",
             "subtitle": "PW MOD APK v1.0.0",
@@ -113,7 +131,7 @@
             "isNew": false,
             "isPopular": true,
             "isFeatured": true,
-            "order": 6
+            "order": 7
         }
     ]
 }
