@@ -11,6 +11,6 @@
         "name": "Vidyagram",
         "api": "https://armathsapi.akamai.net.in",
         "logo": "https://appx-content-v2.classx.co.in/subject/2026-03-23-0.9803561573854437.png",
-        "test_series-json": "https://lbhub8978.github.io/batches/testseries/rwatest.json"
+        "test_series-json": "https://lbhub8978.github.io/batches/testseries/vidyagramtest.json"
     }
 ]
