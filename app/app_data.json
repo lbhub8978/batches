@@ -18,7 +18,7 @@
     "backend": "https://lbhubbackend-83eeeebc2831.herokuapp.com",
     "mainAppData": {
       "mAVersion": "v1.3.2",
-      "updateMessage": "🚀 LB STUDY HUB v1.3.22 Update is Live!\n\n✅ All issues resolved\nRWA Login Remove! 🔥",
+      "updateMessage": "🚀 LB STUDY HUB v1.3.2 Update is Live!\n\n✅ All issues resolved\nRWA Login Remove! 🔥",
       "updateLink": "https://lbhubselectionway.vercel.app//LB_STUDY_HUB_1.3.2.apk"
     }
   }
