@@ -17,9 +17,9 @@
     "keyvideo": "https://youtu.be/S0eoco7px88",
     "backend": "https://lbhubbackend-83eeeebc2831.herokuapp.com",
     "mainAppData": {
-      "mAVersion": "v1.3.1",
-      "updateMessage": "🚀 FREE STUDY v1.3.1 Update is Live!\n\n✅ All issues resolved\nRWA Login Remove! 🔥",
-      "updateLink": "https://lbhubselectionway.vercel.app/FREE_STUDY_1.3.1.apk"
+      "mAVersion": "v1.3.2",
+      "updateMessage": "🚀 app maintainence pe hai kyuki key and kuch issue solve karne haai ok website use karo ye kal tak theek ho jayega",
+      "updateLink": "https://lbhubrwa.vercel.app"
     }
   }
 }
