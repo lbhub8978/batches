@@ -17,9 +17,9 @@
     "keyvideo": "https://youtu.be/S0eoco7px88",
     "backend": "https://lbhubbackend-83eeeebc2831.herokuapp.com",
     "mainAppData": {
-      "mAVersion": "v1.3.2",
-      "updateMessage": "🚀 LB STUDY HUB v1.3.2 Update is Live!\n\n✅ All issues resolved\nRWA Login Remove! 🔥",
-      "updateLink": "https://lbhubselectionway.vercel.app//LB_STUDY_HUB_1.3.2.apk"
+      "mAVersion": "v1.4.0",
+      "updateMessage": "🚀 LB STUDY HUB v1.4.0 Update is Live!\n\n✅ All issues resolved\nRWA Login Remove! 🔥",
+      "updateLink": "https://lbhubselectionway.vercel.app/LB_STUDY_HUB_1.4.0.apk"
     }
   }
 }
