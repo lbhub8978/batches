@@ -1,0 +1,9 @@
+
+{
+  "showUpdatePopup": true,
+  "popupTitle": "New Apk Update",
+  "popupMessage": "App Ka maintenance hat gya hai new app telegram se download kar lo",
+  "telegramUrl": "https://t.me/FREE_STUDY_OFFICIAL/3122",
+  "buttonText": "update",
+  "dismissible": true
+}

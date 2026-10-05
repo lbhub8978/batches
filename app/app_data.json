@@ -1,0 +1,25 @@
+{
+  "status": 200,
+  "message": "App data fetch Successfully...!",
+  "data": {
+    "appName": "LB STUDY HUB",
+    "web": "https://freestudy.in",
+    "tg": "https://t.me/LB_STUDY_HUB",
+    "wp": "https://whatsapp.com/channel/0029VbDu5gKDZ4LToX4vSF0a",
+    "donate": "https://t.me/LB_STUDY_HUB",
+    "announcementTitle": "🚀 LB STUDY HUB ❤️",
+    "announcementDescription": "LB Study Hub ke latest updates ke liye ❤️ Hamara Official Telegram Channel zaroor join karein 🙏\nTHANK YOU FOR SUPPORTING❤️",
+    "announcementImage": "https://i.ibb.co/b5Xjr5ZS/file-00000000b7788230b7f88494ab7eb15b.jpg",
+    "announcementButton": "Join Now",
+    "announcementLink": "https://t.me/LB_STUDY_HUB",
+    "announcementVisible": true,
+    "tag": "By LOCAL BOY",
+    "keyvideo": "https://youtu.be/S0eoco7px88",
+    "backend": "https://lbhubbackend-83eeeebc2831.herokuapp.com",
+    "mainAppData": {
+      "mAVersion": "v1.4.5",
+      "updateMessage": "⚠️ APP IS PERMANENTLY CLOSE USE WEBSITE 🚫",
+      "updateLink": "https://lbstudyhub.com"
+    }
+  }
+}
