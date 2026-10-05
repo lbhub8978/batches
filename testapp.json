@@ -1,0 +1,44 @@
+[
+    {
+        "id": "1",
+        "name": "Rojgarwithankit",
+        "api": "https://rozgarapinew.teachx.in",
+        "logo": "https://i.ibb.co/Pzfycgzg/IMG-20260910-171351-600.jpg",
+        "test_series-json": "https://lbhub8978.github.io/batches/testseries/rwatest.json"
+    },
+    {
+        "id": "2",
+        "name": "Vidyagram",
+        "api": "https://armathsapi.akamai.net.in",
+        "logo": "https://appx-content-v2.classx.co.in/subject/2026-03-23-0.9803561573854437.png",
+        "test_series-json": "https://lbhub8978.github.io/batches/testseries/rwatest.json"
+    },
+    {
+        "id": "3",
+        "name": "Parmar Academy",
+        "api": "https://parmaracademyapi.classx.co.in",
+        "logo": "https://i.ibb.co/ZpJMMnqs/channels4-profile-1.jpg",
+        "test_series-json": "https://lbhub8978.github.io/batches/testseries/parmar.json"
+    },
+    {
+        "id": "4",
+        "name": "Sachin Academy",
+        "api": "https://sachinacademyapi.classx.co.in",
+        "logo": "https://i.ibb.co/9m3T0wsQ/unnamed.jpg",
+        "test_series-json": "https://lbhub8978.github.io/batches/testseries/sachinacademy.json"
+    },
+    {
+        "id": "5",
+        "name": "Army Study",
+        "api": "https://armystudyliveclassesapi.classx.co.in",
+        "logo": "https://armystudy.in/wp-content/uploads/2025/10/armystudylogo.png",
+        "test_series-json": "https://lbhub8978.github.io/batches/testseries/armystudy.json"
+    },
+    {
+        "id": "6",
+        "name": "Cadet Defence Academy",
+        "api": "https://cadetsdefenceacademyapi.classx.co.in",
+        "logo": "https://i.ibb.co/rGQFRwhY/images.jpg",
+        "test_series-json": "https://lbhub8978.github.io/batches/testseries/cadetsdefenceacademy.json"
+    }
+]
