@@ -1,5 +1,40 @@
 [
     {
+        "id": "6ac4ff938bf8e8c5e33250a2",
+        "banner": "https://selectionwayserver-proxy2.hranker.com:8443/courses/banners/1791297283218-13.0_apop_banner.jpg",
+        "title": "Selection Batch 13.0"
+    },
+    {
+        "id": "6ac4ff7f8bf8e8c5e332506a",
+        "banner": "https://selectionwayserver-proxy2.hranker.com:8443/courses/banners/1791297342321-maths_11.jpg",
+        "title": "Maths Special 13.0"
+    },
+    {
+        "id": "6ac4ff708bf8e8c5e3325054",
+        "banner": "https://selectionwayserver-proxy2.hranker.com:8443/courses/banners/1791297471039-aman_sir_png_11.jpg",
+        "title": "English Special 13.0"
+    },
+    {
+        "id": "6ac4ff5e8bf8e8c5e332504e",
+        "banner": "https://selectionwayserver-proxy2.hranker.com:8443/courses/banners/1791297496812-balramsir_115.jpg",
+        "title": "Reasoning Special 13.0"
+    },
+    {
+        "id": "6ac4ff498bf8e8c5e3325043",
+        "banner": "https://selectionwayserver-proxy2.hranker.com:8443/courses/banners/1791297711567-4_IMG_BANNER_APP_copy_1125.jpg",
+        "title": "Reasoning Foundation 3.0"
+    },
+    {
+        "id": "6ac4ff3c8bf8e8c5e331abf2",
+        "banner": "https://selectionwayserver-proxy2.hranker.com:8443/courses/banners/1791297733469-rretw.jpg",
+        "title": "GS Special 13.0"
+    },
+    {
+        "id": "6ac4fe748bf8e8c5e3310736",
+        "banner": "https://selectionwayserver-proxy2.hranker.com:8443/courses/banners/1791297755988-12536.jpg",
+        "title": "GS Foundation 3.0"
+    },
+    {
         "id": "6abe3a018bf8e8c5e32cc48c",
         "banner": "https://selectionwayserver-proxy2.hranker.com:8443/courses/banners/1790870072266-1000466420.jpg",
         "title": "SSC MAINS Batch 2026"
