@@ -1,5 +1,40 @@
 [
     {
+        "id": "6adca5287d19ab87b57663a0",
+        "banner": "https://selectionwayserver-proxy2.hranker.com:8443/courses/banners/1792846335927-banner_up_constable.jpg.jpeg",
+        "title": "UP कांस्टेबल Batch 2026"
+    },
+    {
+        "id": "6adc61837d19ab87b5662fa7",
+        "banner": "https://selectionwayserver-proxy2.hranker.com:8443/courses/banners/1792832629708-topper_guidance_programme_new0.jpg.jpeg",
+        "title": "Group D Target Batch 2026"
+    },
+    {
+        "id": "6ad833ce7d19ab87b5985839",
+        "banner": "https://selectionwayserver-proxy2.hranker.com:8443/courses/banners/1792587017438-7.0_seleciton_batch_vod_final.png",
+        "title": "Selection Batch  Vod 7.0"
+    },
+    {
+        "id": "6ad833c67d19ab87b5985834",
+        "banner": "https://selectionwayserver-proxy2.hranker.com:8443/courses/banners/1792587040161-Gs_4.0_vod_final0.png",
+        "title": "Maths Special VOD 9.0"
+    },
+    {
+        "id": "6ad833c27d19ab87b598582f",
+        "banner": "https://selectionwayserver-proxy2.hranker.com:8443/courses/banners/1792587070207-Englslih_7.0_vod_final.png",
+        "title": "English Special VOD 7.0"
+    },
+    {
+        "id": "6ad833bd7d19ab87b598582a",
+        "banner": "https://selectionwayserver-proxy2.hranker.com:8443/courses/banners/1792587102869-Reasoning_4.0_vod_final.png",
+        "title": "Reasoning foundation  vod 4.0"
+    },
+    {
+        "id": "6ad833af7d19ab87b5985825",
+        "banner": "https://selectionwayserver-proxy2.hranker.com:8443/courses/banners/1792587124101-Gs_4.0_vod_final.png",
+        "title": "GS Special VOD 4.0"
+    },
+    {
         "id": "6ad87d287d19ab87b5a91733",
         "banner": "https://selectionwayserver-proxy2.hranker.com:8443/courses/banners/1792579892908-topper_guidance_programme_new_final..jpg.jpeg",
         "title": "Station Master Target Batch"
