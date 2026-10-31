@@ -1,5 +1,105 @@
 [
     {
+        "batch_id": "808",
+        "batch_name": "UGC NET JUNE-2027 (PAPER-II) COMMERCE - \"आचार्य बैच 3.0",
+        "thumbnail": "https://appx-content-v2.classx.co.in/paid_course3/2026-10-28-0.1441470973056882.jpeg"
+    },
+    {
+        "batch_id": "807",
+        "batch_name": "UGC NET JUNE -2027 (PAPER-I + II)  EDUCATION - \"आचार्य बैच 3.0\" (COMBO BATCH)",
+        "thumbnail": "https://appx-content-v2.classx.co.in/paid_course3/2026-10-28-0.7955379636304579.jpeg"
+    },
+    {
+        "batch_id": "806",
+        "batch_name": "UGC NET JUNE-2027 (PAPER-II) EDUCATION - \"आचार्य बैच 3.0",
+        "thumbnail": "https://appx-content-v2.classx.co.in/paid_course3/2026-10-28-0.16154242169685362.jpeg"
+    },
+    {
+        "batch_id": "805",
+        "batch_name": "UGC NET JUNE -2027 (PAPER-I + II)  SOCIOLOGY - \"आचार्य बैच 3.0\" (COMBO BATCH)",
+        "thumbnail": "https://appx-content-v2.classx.co.in/paid_course3/2026-10-28-0.5619406298096123.jpeg"
+    },
+    {
+        "batch_id": "804",
+        "batch_name": "UGC NET JUNE-2027 (PAPER-II)  SOCIOLOGY - \"आचार्य बैच 3.0",
+        "thumbnail": "https://appx-content-v2.classx.co.in/paid_course3/2026-10-28-0.32576254354281486.jpeg"
+    },
+    {
+        "batch_id": "803",
+        "batch_name": "UGC NET JUNE -2027 (PAPER-I + II)  SANSKRIT - \"आचार्य बैच 3.0\" (COMBO BATCH)",
+        "thumbnail": "https://appx-content-v2.classx.co.in/paid_course3/2026-10-28-0.19259882567366526.jpeg"
+    },
+    {
+        "batch_id": "802",
+        "batch_name": "UGC NET JUNE-2027 (PAPER-II)  SANSKRIT - \"आचार्य बैच 3.0",
+        "thumbnail": "https://appx-content-v2.classx.co.in/paid_course3/2026-10-28-0.4607768724910879.jpeg"
+    },
+    {
+        "batch_id": "801",
+        "batch_name": "UGC NET JUNE -2027 (PAPER-I + II)  HINDI - \"आचार्य बैच 3.0\" (COMBO BATCH)",
+        "thumbnail": "https://appx-content-v2.classx.co.in/paid_course3/2026-10-28-0.3552046738537291.jpeg"
+    },
+    {
+        "batch_id": "800",
+        "batch_name": "UGC NET JUNE-2027 (PAPER-II) HINDI - \"आचार्य बैच 3.0",
+        "thumbnail": "https://appx-content-v2.classx.co.in/paid_course3/2026-10-28-0.39725909914537494.jpeg"
+    },
+    {
+        "batch_id": "799",
+        "batch_name": "UGC NET JUNE -2027 (PAPER-I + II) ENGLISH - \"आचार्य बैच 3.0\" (COMBO BATCH)",
+        "thumbnail": "https://appx-content-v2.classx.co.in/paid_course3/2026-10-28-0.2617105585455193.jpeg"
+    },
+    {
+        "batch_id": "798",
+        "batch_name": "UGC NET JUNE-2027 (PAPER-II)  ENGLISH - \"आचार्य बैच 3.0",
+        "thumbnail": "https://appx-content-v2.classx.co.in/paid_course3/2026-10-28-0.16717698252026292.jpeg"
+    },
+    {
+        "batch_id": "797",
+        "batch_name": "UGC NET JUNE -2027 (PAPER-I + II) GEOGRAPHY - \"आचार्य बैच 3.0\" (COMBO BATCH)",
+        "thumbnail": "https://appx-content-v2.classx.co.in/paid_course3/2026-10-28-0.16198625828882673.jpeg"
+    },
+    {
+        "batch_id": "796",
+        "batch_name": "UGC NET JUNE-2027 (PAPER-II)  GEOGRAPHY - \"आचार्य बैच 3.0",
+        "thumbnail": "https://appx-content-v2.classx.co.in/paid_course3/2026-10-28-0.658467921809276.jpeg"
+    },
+    {
+        "batch_id": "795",
+        "batch_name": "UGC NET JUNE-2027 (PAPER-I + II) LAW - \"आचार्य बैच 3.0\" (COMBO BATCH)",
+        "thumbnail": "https://appx-content-v2.classx.co.in/paid_course3/2026-10-28-0.40978644657048136.jpeg"
+    },
+    {
+        "batch_id": "794",
+        "batch_name": "UGC NET JUNE -2027 (PAPER-II) LAW - \"आचार्य बैच 3.0\"",
+        "thumbnail": "https://appx-content-v2.classx.co.in/paid_course3/2026-10-28-0.2577949455169488.jpeg"
+    },
+    {
+        "batch_id": "793",
+        "batch_name": "UGC NET JUNE -2027 (PAPER-II) POLITICAL SCIENCE - \"आचार्य बैच 3.0\"",
+        "thumbnail": "https://appx-content-v2.classx.co.in/paid_course3/2026-10-28-0.03361201627878063.jpeg"
+    },
+    {
+        "batch_id": "792",
+        "batch_name": "UGC NET JUNE -2027 (PAPER-1 & II) POLITICAL SCIENCE - \"आचार्य बैच 3.0\" (COMBO BATCH)",
+        "thumbnail": "https://appx-content-v2.classx.co.in/paid_course3/2026-10-28-0.9399391019640464.jpeg"
+    },
+    {
+        "batch_id": "791",
+        "batch_name": "UGC NET 2027 JUNE (PAPER-I + II) HISTORY - \"आचार्य बैच 3.0\" (COMBO BATCH)",
+        "thumbnail": "https://appx-content-v2.classx.co.in/paid_course3/2026-10-28-0.8252376581061784.jpeg"
+    },
+    {
+        "batch_id": "790",
+        "batch_name": "UGC NET 2027 JUNE (PAPER-II) HISTORY - \"आचार्य बैच 3.0\"",
+        "thumbnail": "https://appx-content-v2.classx.co.in/paid_course3/2026-10-28-0.8002086681438388.jpeg"
+    },
+    {
+        "batch_id": "789",
+        "batch_name": "UGC NET JUNE-2027 (PAPER-I) – \"आचार्य बैच 3.0",
+        "thumbnail": "https://appx-content-v2.classx.co.in/paid_course3/2026-10-28-0.8076631518960055.jpeg"
+    },
+    {
         "batch_id": "788",
         "batch_name": "RAILWAY STATION MASTER ( SELECTION BATCH )",
         "thumbnail": "https://appx-content-v2.classx.co.in/paid_course3/2026-10-26-0.6978323367845476.jpeg"
